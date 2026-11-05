@@ -1,0 +1,43 @@
+# ---------- 构建产物 ----------
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+.flattened-pom.xml
+hs_err_pid*
+replay_pid*
+
+# ---------- 本地配置与密钥（禁止提交）----------
+.env
+.env.local
+.env.*.local
+application-local.yml
+application-local.yaml
+**/application-local.yml
+*.pem
+*.p12
+*.jks
+
+# ---------- Agent 运行时会话与工作区（含真实调用记录）----------
+.agentscope/workspace/
+.agentscope/**/sessions/
+
+# ---------- 日志 ----------
+logs/
+*.log
+
+# ---------- IDE ----------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# ---------- 系统文件 ----------
+.DS_Store
+Thumbs.db

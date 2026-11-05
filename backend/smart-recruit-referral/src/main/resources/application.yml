@@ -1,0 +1,51 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: smart-recruit-referral
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 20MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/smart_recruit_referral?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: SmartRecruitHikariPool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 60000
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.smartrecruit.referral.entity
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# JWT Configuration — must match gateway's smart-recruit.jwt.secret-key
+jwt:
+  secret: ${JWT_SECRET_KEY}
+
+# 服务间内部 JWT（调用 smart-recruit-system 时使用的签名内部令牌）
+smart-recruit:
+  internal:
+    # 必须与其他模块一致；生产通过环境变量 INTERNAL_JWT_SECRET 覆盖
+    secret: ${INTERNAL_JWT_SECRET}
+
+logging:
+  level:
+    com.smartrecruit.referral: DEBUG
+    com.baomidou.mybatisplus: DEBUG
