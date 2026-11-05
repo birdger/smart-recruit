@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540">
+  <defs>
+    <linearGradient id="aihdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="540" fill="#ffffff"/>
+  <rect width="1200" height="52" fill="url(#aihdr)"/>
+  <text x="600" y="33" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">AI 能力全景 · 简历 → Offer 五阶段流水线 · 12 类 AI 能力全部异步化</text>
+
+  <!-- pipeline stages -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" text-anchor="middle">
+    <rect x="40"  y="92" width="200" height="96" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="1.6"/>
+    <text x="140" y="122" font-size="15" font-weight="700" fill="#3730a3">① 简历解析</text>
+    <text x="140" y="144" font-size="12.5" fill="#4f46e5">Tika 文本 → LLM 结构化</text>
+    <text x="140" y="162" font-size="12.5" fill="#4f46e5">图片/扫描件 → qwen-vl-max</text>
+    <text x="140" y="180" font-size="12" fill="#6366f1">失败自动转人工复核</text>
+
+    <rect x="260" y="92" width="200" height="96" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="1.6"/>
+    <text x="360" y="122" font-size="15" font-weight="700" fill="#3730a3">② AI 智能筛选</text>
+    <text x="360" y="144" font-size="12.5" fill="#4f46e5">五维加权评分 · 异步任务</text>
+    <text x="360" y="162" font-size="12.5" fill="#4f46e5">轮询进度 · 匹配度展示</text>
+    <text x="360" y="180" font-size="12" fill="#6366f1">降级：启发式评分</text>
+
+    <rect x="480" y="92" width="200" height="96" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="1.6"/>
+    <text x="580" y="122" font-size="15" font-weight="700" fill="#9a3412">③ 人工审核</text>
+    <text x="580" y="144" font-size="12.5" fill="#c2410c">HR 确认 · 批量操作</text>
+    <text x="580" y="162" font-size="12.5" fill="#c2410c">候选人归档入库</text>
+    <text x="580" y="180" font-size="12" fill="#ea580c">人机协同节点</text>
+
+    <rect x="700" y="92" width="200" height="96" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.6"/>
+    <text x="800" y="122" font-size="15" font-weight="700" fill="#5b21b6">④ 面试评估</text>
+    <text x="800" y="144" font-size="12.5" fill="#6d28d9">AI 出题 → 在线测评</text>
+    <text x="800" y="162" font-size="12.5" fill="#6d28d9">AgentScope 4 子 Agent</text>
+    <text x="800" y="180" font-size="12" fill="#7c3aed">六维度 · 同步 / SSE 流式</text>
+
+    <rect x="920" y="92" width="240" height="96" rx="12" fill="#fdf2f8" stroke="#ec4899" stroke-width="1.6"/>
+    <text x="1040" y="122" font-size="15" font-weight="700" fill="#9d174d">⑤ Offer 预测</text>
+    <text x="1040" y="144" font-size="12.5" fill="#be185d">接受度五维预测（定时落库）</text>
+    <text x="1040" y="162" font-size="12.5" fill="#be185d">留任预测（SHA-256 指纹去重）</text>
+    <text x="1040" y="180" font-size="12" fill="#db2777">合同电子签 → 六步入职</text>
+
+    <g stroke="#7c3aed" stroke-width="2" fill="none">
+      <line x1="240" y1="140" x2="256" y2="140" marker-end="url(#a2)"/>
+      <line x1="460" y1="140" x2="476" y2="140" marker-end="url(#a2)"/>
+      <line x1="680" y1="140" x2="696" y2="140" marker-end="url(#a2)"/>
+      <line x1="900" y1="140" x2="916" y2="140" marker-end="url(#a2)"/>
+    </g>
+    <text x="600" y="216" text-anchor="middle" font-size="12.5" fill="#7c3aed">每个阶段记录真实 Agent 任务 → 任务队列 / 事件流（SSE）/ Token 消耗分布 / 成功率 全程可观测</text>
+  </g>
+
+  <!-- model routing -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="40" y="250" width="540" height="250" rx="12" fill="#1e1b4b"/>
+    <text x="64" y="284" font-size="16" font-weight="700" fill="#ffffff">LLM 网关 · 多模型路由与降级</text>
+    <g font-size="13.5" fill="#c7d2fe">
+      <rect x="64" y="302" width="490" height="34" rx="8" fill="#ffffff" fill-opacity="0.07"/>
+      <text x="80" y="324" fill="#e0e7ff">简历视觉解析</text><text x="530" y="324" text-anchor="end" fill="#a5b4fc">→ qwen-vl-max</text>
+      <rect x="64" y="344" width="490" height="34" rx="8" fill="#ffffff" fill-opacity="0.07"/>
+      <text x="80" y="366" fill="#e0e7ff">AI 筛选 / AI 出题 / JD 生成</text><text x="530" y="366" text-anchor="end" fill="#a5b4fc">→ qwen3-max</text>
+      <rect x="64" y="386" width="490" height="34" rx="8" fill="#ffffff" fill-opacity="0.07"/>
+      <text x="80" y="408" fill="#e0e7ff">Offer 接受度 / 留任预测</text><text x="530" y="408" text-anchor="end" fill="#a5b4fc">→ deepseek-v4-flash</text>
+      <rect x="64" y="428" width="490" height="34" rx="8" fill="#ffffff" fill-opacity="0.07"/>
+      <text x="80" y="450" fill="#e0e7ff">人才推荐 / 内推匹配</text><text x="530" y="450" text-anchor="end" fill="#a5b4fc">→ deepseek-chat</text>
+    </g>
+    <text x="64" y="486" font-size="12.5" fill="#818cf8">按 Agent 路由模型 · 主备切换 · 失败自动降级 · 统一 Token 计量入监控</text>
+  </g>
+
+  <!-- degradation chain -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="620" y="250" width="540" height="250" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="644" y="284" font-size="16" font-weight="700" fill="#0f172a">多级降级链 · 任何故障页面都有数据</text>
+    <g font-size="13.5">
+      <rect x="644" y="306" width="180" height="40" rx="9" fill="#6366f1"/>
+      <text x="734" y="331" text-anchor="middle" fill="#ffffff">多 Agent 编排</text>
+      <rect x="644" y="358" width="180" height="40" rx="9" fill="#818cf8"/>
+      <text x="734" y="383" text-anchor="middle" fill="#ffffff">单 Agent</text>
+      <rect x="644" y="410" width="180" height="40" rx="9" fill="#a5b4fc"/>
+      <text x="734" y="435" text-anchor="middle" fill="#1e1b4b">LLM 直调</text>
+      <rect x="644" y="462" width="180" height="30" rx="9" fill="#c7d2fe"/>
+      <text x="734" y="482" text-anchor="middle" fill="#1e1b4b" font-size="12.5">启发式评分兜底</text>
+      <g stroke="#94a3b8" stroke-width="1.6" fill="none">
+        <line x1="836" y1="326" x2="862" y2="326"/>
+        <line x1="836" y1="378" x2="862" y2="378"/>
+        <line x1="836" y1="430" x2="862" y2="430"/>
+      </g>
+      <g font-size="12.5" fill="#475569">
+        <text x="872" y="332">AgentScope 编排层故障 → 自动跳过</text>
+        <text x="872" y="384">单 Agent 继续完成评估</text>
+        <text x="872" y="436">LangChain4j 网关直调大模型</text>
+      </g>
+      <rect x="912" y="466" width="224" height="28" rx="8" fill="#fef3c7"/>
+      <text x="1024" y="485" text-anchor="middle" fill="#92400e" font-size="12.5">成本三件套：预计算 · 指纹去重 · 双级缓存</text>
+    </g>
+  </g>
+</svg>

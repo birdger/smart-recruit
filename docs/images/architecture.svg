@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="780" fill="#ffffff"/>
+  <rect width="1200" height="52" fill="url(#hdr)"/>
+  <text x="600" y="33" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">SmartRecruit 系统架构 · 数据库-per-服务 · 网关统一鉴权 · 声明式服务调用</text>
+
+  <!-- clients -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="120" y="86" width="380" height="62" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="1.6"/>
+    <text x="310" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#3730a3">招聘管理端（HR）</text>
+    <text x="310" y="134" text-anchor="middle" font-size="13" fill="#6366f1">Vue 3 · TS · Element Plus · :3000</text>
+    <rect x="700" y="86" width="380" height="62" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="1.6"/>
+    <text x="890" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#3730a3">招聘官网 / 合同签署（候选人）</text>
+    <text x="890" y="134" text-anchor="middle" font-size="13" fill="#6366f1">Vue 3 · TS · :3001</text>
+    <line x1="310" y1="148" x2="560" y2="188" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <line x1="890" y1="148" x2="640" y2="188" stroke="#94a3b8" stroke-width="1.6" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- gateway -->
+  <rect x="420" y="192" width="360" height="64" rx="12" fill="#1e1b4b"/>
+  <text x="600" y="219" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="700" fill="#ffffff">API 网关 :8080</text>
+  <text x="600" y="242" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12.5" fill="#a5b4fc">路由转发 · JWT 校验 · 限流 · CORS · 统一响应 · 用户身份透传</text>
+
+  <!-- services row -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13">
+    <!-- 4 top -->
+    <g>
+      <rect x="40"  y="300" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="40"  y="300" width="256" height="6" rx="3" fill="#6366f1"/>
+      <text x="168" y="326" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">system :8081</text>
+      <text x="168" y="348" text-anchor="middle" fill="#475569">用户 / 角色 / 权限 / 部门 / 审计 / 文件</text>
+
+      <rect x="328" y="300" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="328" y="300" width="256" height="6" rx="3" fill="#0ea5e9"/>
+      <text x="456" y="326" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">recruitment :8082</text>
+      <text x="456" y="348" text-anchor="middle" fill="#475569">职位 / 简历解析 / 候选人 / 官网职位</text>
+
+      <rect x="616" y="300" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="616" y="300" width="256" height="6" rx="3" fill="#10b981"/>
+      <text x="744" y="326" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">interview :8083</text>
+      <text x="744" y="348" text-anchor="middle" fill="#475569">面试 / 题库 / AI 出题 / 在线测评</text>
+
+      <rect x="904" y="300" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="904" y="300" width="256" height="6" rx="3" fill="#f59e0b"/>
+      <text x="1032" y="326" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">offer :8084</text>
+      <text x="1032" y="348" text-anchor="middle" fill="#475569">审批流 / 合同电子签 / 入职</text>
+    </g>
+    <!-- 3 bottom -->
+    <g>
+      <rect x="180" y="396" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="180" y="396" width="256" height="6" rx="3" fill="#ec4899"/>
+      <text x="308" y="422" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">talent :8085</text>
+      <text x="308" y="444" text-anchor="middle" fill="#475569">人才库 / 数据快照 / AI 洞察</text>
+
+      <rect x="472" y="396" width="256" height="66" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+      <rect x="472" y="396" width="256" height="6" rx="3" fill="#14b8a6"/>
+      <text x="600" y="422" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">referral :8086</text>
+      <text x="600" y="444" text-anchor="middle" fill="#475569">内推计划 / 记录 / 排行榜</text>
+
+      <rect x="764" y="396" width="256" height="66" rx="10" fill="#1e1b4b"/>
+      <rect x="764" y="396" width="256" height="6" rx="3" fill="#a78bfa"/>
+      <text x="892" y="422" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ai-engine :8087</text>
+      <text x="892" y="444" text-anchor="middle" fill="#c4b5fd">LLM 网关 / AgentScope 编排 / 监控</text>
+    </g>
+    <!-- gateway -> services -->
+    <g stroke="#94a3b8" stroke-width="1.3" fill="none">
+      <line x1="500" y1="256" x2="168" y2="296" marker-end="url(#arrow)"/>
+      <line x1="560" y1="256" x2="456" y2="296" marker-end="url(#arrow)"/>
+      <line x1="600" y1="256" x2="744" y2="296" marker-end="url(#arrow)"/>
+      <line x1="660" y1="256" x2="1032" y2="296" marker-end="url(#arrow)"/>
+    </g>
+  </g>
+
+  <!-- AI layer -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13">
+    <rect x="764" y="490" width="256" height="88" rx="10" fill="#f5f3ff" stroke="#a78bfa"/>
+    <text x="892" y="514" text-anchor="middle" font-size="14" font-weight="700" fill="#5b21b6">LLM 多模型路由</text>
+    <text x="892" y="536" text-anchor="middle" fill="#6d28d9">qwen3-max / qwen-vl-max / deepseek</text>
+    <text x="892" y="556" text-anchor="middle" fill="#6d28d9">主备切换 · 自动降级 · Token 计量</text>
+    <line x1="892" y1="462" x2="892" y2="486" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#arrow)"/>
+
+    <rect x="1044" y="490" width="130" height="88" rx="10" fill="#fdf2f8" stroke="#f472b6"/>
+    <text x="1109" y="514" text-anchor="middle" font-size="14" font-weight="700" fill="#9d174d">AgentScope</text>
+    <text x="1109" y="536" text-anchor="middle" fill="#be185d">主控 + 4 子 Agent</text>
+    <text x="1109" y="556" text-anchor="middle" fill="#be185d">SSE 流式 · 五阶段</text>
+    <line x1="1024" y1="534" x2="1040" y2="534" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- infra row -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13">
+    <rect x="40" y="612" width="330" height="110" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="205" y="640" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">MySQL 8.0 × 7 个业务库</text>
+    <text x="205" y="664" text-anchor="middle" fill="#15803d">system / recruitment / interview</text>
+    <text x="205" y="684" text-anchor="middle" fill="#15803d">offer / talent / referral / ai</text>
+    <text x="205" y="706" text-anchor="middle" fill="#15803d">56 张表 · 雪花 ID · 逻辑删除</text>
+
+    <rect x="400" y="612" width="240" height="110" rx="12" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="520" y="640" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">Redis</text>
+    <text x="520" y="664" text-anchor="middle" fill="#1d4ed8">验证码 · 分布式会话</text>
+    <text x="520" y="684" text-anchor="middle" fill="#1d4ed8">Redisson 锁 · 限流</text>
+    <text x="520" y="704" text-anchor="middle" fill="#1d4ed8">+ Caffeine L1 缓存</text>
+
+    <rect x="670" y="612" width="240" height="110" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="790" y="640" text-anchor="middle" font-size="15" font-weight="700" fill="#92400e">Nacos 2.x</text>
+    <text x="790" y="664" text-anchor="middle" fill="#a16207">服务注册与发现</text>
+    <text x="790" y="684" text-anchor="middle" fill="#a16207">配置中心</text>
+    <text x="790" y="704" text-anchor="middle" fill="#a16207">@HttpExchange 声明式调用</text>
+
+    <rect x="940" y="612" width="220" height="110" rx="12" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="1050" y="640" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">RustFS (S3 兼容)</text>
+    <text x="1050" y="664" text-anchor="middle" fill="#475569">简历 / 合同 / 头像</text>
+    <text x="1050" y="684" text-anchor="middle" fill="#475569">SMTP 邮件通知</text>
+    <text x="1050" y="704" text-anchor="middle" fill="#475569">Java 25 虚拟线程</text>
+  </g>
+
+  <g stroke="#94a3b8" stroke-width="1.3" fill="none">
+    <line x1="308" y1="462" x2="205" y2="608" marker-end="url(#arrow)"/>
+    <line x1="456" y1="366" x2="480" y2="608" marker-end="url(#arrow)"/>
+    <line x1="600" y1="462" x2="620" y2="608" marker-end="url(#arrow)"/>
+    <line x1="1032" y1="366" x2="1010" y2="608" marker-end="url(#arrow)"/>
+  </g>
+  <text x="600" y="762" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#94a3b8">服务间通信：Spring @HttpExchange + @LoadBalanced RestClient · 认证收敛网关，下游读取 X-User-Id / X-Username / X-User-Role 透传头</text>
+</svg>

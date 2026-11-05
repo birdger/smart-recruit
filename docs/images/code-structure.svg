@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#ffffff"/>
+  <rect width="1200" height="52" fill="#1e1b4b"/>
+  <text x="600" y="33" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">代码结构 · Monorepo 三端 + 8 个 Maven 模块</text>
+
+  <!-- monorepo tree -->
+  <g font-family="Consolas, JetBrains Mono, monospace" font-size="14" fill="#0f172a">
+    <rect x="40" y="80" width="560" height="440" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="64" y="116" font-weight="700" fill="#4f46e5">smart-recruit/</text>
+    <text x="84" y="146" fill="#334155">├── <tspan font-weight="700" fill="#0f172a">backend/</tspan>            <tspan fill="#94a3b8"># Spring Cloud 微服务（745 个 Java 文件）</tspan></text>
+    <text x="104" y="172" fill="#475569">│   ├── smart-recruit-common/      <tspan fill="#94a3b8"># 统一响应 · 异常 · DTO · 工具</tspan></text>
+    <text x="104" y="198" fill="#475569">│   ├── smart-recruit-gateway/     <tspan fill="#94a3b8"># AuthFilter · 路由 · 限流</tspan></text>
+    <text x="104" y="224" fill="#475569">│   ├── smart-recruit-system/      <tspan fill="#94a3b8"># RBAC · 审计 · 文件 · 通知</tspan></text>
+    <text x="104" y="250" fill="#475569">│   ├── smart-recruit-recruitment/ <tspan fill="#94a3b8"># 职位 · 简历解析 · 候选人</tspan></text>
+    <text x="104" y="276" fill="#475569">│   ├── smart-recruit-interview/   <tspan fill="#94a3b8"># 面试 · 题库 · 测评</tspan></text>
+    <text x="104" y="302" fill="#475569">│   ├── smart-recruit-offer/       <tspan fill="#94a3b8"># 审批流 · 电子签 · 入职</tspan></text>
+    <text x="104" y="328" fill="#475569">│   ├── smart-recruit-talent/      <tspan fill="#94a3b8"># 人才库 · 快照分析</tspan></text>
+    <text x="104" y="354" fill="#475569">│   ├── smart-recruit-referral/    <tspan fill="#94a3b8"># 内推</tspan></text>
+    <text x="104" y="380" fill="#475569">│   └── smart-recruit-ai-engine/   <tspan fill="#94a3b8"># LLM 网关 · AgentScope</tspan></text>
+    <text x="84" y="414" fill="#334155">├── <tspan font-weight="700" fill="#0f172a">admin-web/</tspan>           <tspan fill="#94a3b8"># HR 管理端 · 18 模块（Vue 3 + TS）</tspan></text>
+    <text x="104" y="440" fill="#475569">│   ├── api/ · stores/ · router/ · directives/</text>
+    <text x="104" y="466" fill="#475569">│   └── views/  <tspan fill="#94a3b8"># job / resume / interview / offer / talent ...</tspan></text>
+    <text x="84" y="500" fill="#334155">└── <tspan font-weight="700" fill="#0f172a">careers-web/</tspan>         <tspan fill="#94a3b8"># 招聘官网 · 免登录投递 / 签署</tspan></text>
+  </g>
+
+  <!-- layering -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <rect x="640" y="80" width="520" height="200" rx="12" fill="#eef2ff" stroke="#a5b4fc"/>
+    <text x="900" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#3730a3">后端统一分层（每个服务）</text>
+    <g font-family="Consolas, monospace" font-size="14">
+      <rect x="668" y="128" width="120" height="36" rx="8" fill="#4f46e5"/>
+      <text x="728" y="151" text-anchor="middle" fill="#ffffff">controller</text>
+      <rect x="800" y="128" width="120" height="36" rx="8" fill="#6366f1"/>
+      <text x="860" y="151" text-anchor="middle" fill="#ffffff">service</text>
+      <rect x="932" y="128" width="120" height="36" rx="8" fill="#818cf8"/>
+      <text x="992" y="151" text-anchor="middle" fill="#ffffff">mapper</text>
+      <rect x="668" y="176" width="120" height="36" rx="8" fill="#a5b4fc"/>
+      <text x="728" y="199" text-anchor="middle" fill="#1e1b4b">entity</text>
+      <rect x="800" y="176" width="120" height="36" rx="8" fill="#a5b4fc"/>
+      <text x="860" y="199" text-anchor="middle" fill="#1e1b4b">dto / vo</text>
+      <rect x="932" y="176" width="120" height="36" rx="8" fill="#a5b4fc"/>
+      <text x="992" y="199" text-anchor="middle" fill="#1e1b4b">config</text>
+      <text x="900" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#4338ca">横切能力：filter / interceptor / task / aspect（审计日志）</text>
+    </g>
+
+    <rect x="640" y="304" width="520" height="216" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="900" y="334" text-anchor="middle" font-size="16" font-weight="700" fill="#166534">数据规范（7 库 · 56 表统一遵守）</text>
+    <g font-size="13.5" fill="#166534">
+      <text x="668" y="366">▪ 主键：雪花算法（MyBatis-Plus assign_id）</text>
+      <text x="668" y="392">▪ 软删除：deleted 0/1 全局逻辑删除</text>
+      <text x="668" y="418">▪ 审计六件套：create/update × time / user_id / name</text>
+      <text x="668" y="444">▪ 复杂结构：JSON 列 + TypeHandler（题目 / AI 结果 / 审批节点）</text>
+      <text x="668" y="470">▪ 索引：联合索引覆盖查询，清理前缀冗余单列索引</text>
+      <text x="668" y="496">▪ 服务间零跨库 JOIN，跨域数据接口聚合</text>
+    </g>
+  </g>
+</svg>

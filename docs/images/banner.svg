@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e1b4b"/>
+      <stop offset="0.55" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#4338ca"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow1" cx="0.15" cy="0.2" r="0.5">
+      <stop offset="0" stop-color="#818cf8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.9" cy="0.9" r="0.5">
+      <stop offset="0" stop-color="#f472b6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+  <rect width="1200" height="300" fill="url(#glow1)"/>
+  <rect width="1200" height="300" fill="url(#glow2)"/>
+
+  <!-- logo mark -->
+  <rect x="70" y="64" width="52" height="52" rx="14" fill="#6366f1"/>
+  <text x="96" y="99" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">S</text>
+
+  <text x="70" y="158" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="#ffffff">SmartRecruit</text>
+  <text x="70" y="196" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="21" fill="#c7d2fe">企业级智能招聘平台 · AgentScope 多智能体 + LLM 多模型路由 + Spring Cloud 微服务</text>
+  <rect x="70" y="216" width="220" height="3" rx="1.5" fill="url(#accent)"/>
+
+  <!-- stat chips -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#e0e7ff">
+    <rect x="70" y="240" width="132" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.4"/>
+    <text x="136" y="262" text-anchor="middle">8 个微服务</text>
+    <rect x="214" y="240" width="150" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.4"/>
+    <text x="289" y="262" text-anchor="middle">321 个 REST 接口</text>
+    <rect x="376" y="240" width="150" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.4"/>
+    <text x="451" y="262" text-anchor="middle">7 业务库 · 56 表</text>
+    <rect x="538" y="240" width="164" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.4"/>
+    <text x="620" y="262" text-anchor="middle">12 类 AI 能力覆盖</text>
+    <rect x="714" y="240" width="128" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.4"/>
+    <text x="778" y="262" text-anchor="middle">双前端应用</text>
+  </g>
+
+  <!-- decorative pipeline right -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#c7d2fe">
+    <g>
+      <rect x="830" y="70" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="890" y="94" text-anchor="middle">简历解析</text>
+      <rect x="975" y="70" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="1035" y="94" text-anchor="middle">AI 筛选</text>
+      <rect x="830" y="128" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="890" y="152" text-anchor="middle">AI 出题</text>
+      <rect x="975" y="128" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="1035" y="152" text-anchor="middle">面试评估</text>
+      <rect x="830" y="186" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="890" y="210" text-anchor="middle">Offer 预测</text>
+      <rect x="975" y="186" width="120" height="38" rx="10" fill="#ffffff" fill-opacity="0.08" stroke="#a5b4fc" stroke-opacity="0.5"/>
+      <text x="1035" y="210" text-anchor="middle">留任预测</text>
+    </g>
+    <g stroke="#818cf8" stroke-width="1.6" fill="none" stroke-opacity="0.7">
+      <path d="M950 89 h25"/>
+      <path d="M950 205 h25"/>
+      <path d="M890 108 v20"/>
+      <path d="M1035 108 v20"/>
+    </g>
+    <text x="963" y="248" text-anchor="middle" fill="#a5b4fc">简历 → Offer 五阶段流水线</text>
+  </g>
+</svg>
